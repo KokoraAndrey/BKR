@@ -145,7 +145,7 @@ body.lock {
 }
 .header__buttons {
   margin-bottom: 13px;
-  margin-right: 10px;
+  margin-left: 10px;
   display: flex;
   align-items: center;
   gap: 30px;
