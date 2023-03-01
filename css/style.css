@@ -79,14 +79,18 @@ a {
   font-weight: 400;
 }
 
+body {
+  overflow: auto;
+}
+body.lock {
+  overflow: hidden;
+}
+
 .header__body {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: clamp(0.5rem, 0.054rem + 1.19vw, 1.125rem) 0 11px 0;
-}
-.header__body.lock {
-  overflow: hidden;
 }
 .header__navigation {
   display: flex;
@@ -141,6 +145,7 @@ a {
 }
 .header__buttons {
   margin-bottom: 13px;
+  margin-right: 10px;
   display: flex;
   align-items: center;
   gap: 30px;
