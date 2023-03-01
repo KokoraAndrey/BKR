@@ -1,0 +1,14 @@
+@import 'Extends';
+@import 'Variables';
+
+@mixin pre-title($color) {
+    @extend %oswald-font;
+    color: $color;
+}
+
+@mixin title($font-size, $line-height, $color) {
+    @extend %ultra-font;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+}

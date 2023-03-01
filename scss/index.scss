@@ -1,0 +1,333 @@
+@import 'General';
+@import 'Variables';
+@import 'Extends';
+@import 'Mixins';
+
+.header {
+    // .header__body
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: clamp(0.5rem, 0.054rem + 1.19vw, 1.125rem) 0 11px 0;
+
+        &.lock {
+            overflow: hidden;
+        }
+    }
+
+    // .header__navigation
+
+    &__navigation {
+        display: flex;
+        align-items: center;
+        gap: clamp(0.938rem, -2.625rem + 9.5vw, 4.5rem);
+    }
+
+    // .header__logo
+
+    &__logo {
+    }
+
+    // .header__image
+
+    &__image {
+        width: 106px;
+        height: 48px;
+    }
+
+    // .header__nav
+
+    &__nav {
+        display: flex;
+
+        @media (max-width: 600px) {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: $secondary;
+            transition: all 0.2s ease;
+            overflow: auto;
+            z-index: 10;
+        }
+
+        &.active {
+            left: 0;
+        }
+    }
+
+    // .header__list
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        gap: 60px;
+        margin-bottom: 12px;
+
+        @media (max-width: 600px) {
+            margin: auto;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+
+    // .header__item
+
+    &__item {
+        display: flex;
+    }
+
+    // .header__link
+
+    &__link {
+        @media (max-width: 600px) {
+            display: block;
+            font-size: 30px;
+            line-height: 150px;
+        }
+    }
+
+    &__buttons {
+        margin-bottom: 13px;
+
+        display: flex;
+        align-items: center;
+        gap: 30px;
+    }
+
+    // .header__button
+
+    &__button {
+        padding: 11px 40.5px;
+
+        background-color: $black;
+        color: white;
+        border: 1px solid rgba(255, 255, 255, 0.295743);
+        border-radius: 2px;
+
+        @media (max-width: 600px) {
+            padding: 6px 35.5px;
+        }
+    }
+
+    &__burger {
+        display: none;
+
+        @media (max-width: 600px) {
+            display: block;
+            width: 30px;
+            height: 18px;
+
+            position: relative;
+            z-index: 10;
+            cursor: pointer;
+
+            span {
+                width: 100%;
+                height: 2px;
+
+                position: absolute;
+                top: calc(50% - 1px);
+                left: 0;
+
+                background-color: $black;
+                transition: all 0.2s;
+
+                &:first-child {
+                    top: 0;
+                }
+
+                &:last-child {
+                    top: auto;
+                    bottom: 0;
+                }
+            }
+            &.active {
+                span {
+                    transform: scale(0);
+
+                    &:first-child {
+                        transform: rotate(-45deg);
+                        top: calc(50% - 1px);
+                    }
+
+                    &:last-child {
+                        transform: rotate(45deg);
+                        bottom: calc(50% - 1px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    background-color: $home-block;
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+    }
+
+    &__content {
+        position: relative;
+        top: 0;
+        left: 0;
+
+        &-wheat {
+            width: 133.99px;
+            height: 276.12px;
+
+            position: absolute;
+            top: 7px;
+            left: 0;
+        }
+    }
+
+    &__text-content {
+    }
+
+    &__person {
+        width: 50%;
+        max-height: 791px;
+
+        @media (max-width: 1000px) {
+            display: none;
+        }
+
+        @media (max-width: 500px) {
+            display: block;
+            width: 100%;
+            padding: 0 15px;
+        }
+    }
+}
+
+.text-content {
+    margin: clamp(5.375rem, -18.375rem + 38vw, 10.125rem) 0 0
+        clamp(2.5rem, -27.188rem + 47.5vw, 8.438rem);
+    max-width: 470px;
+
+    position: relative;
+    top: 0;
+    left: 0;
+
+    @media (max-width: 1000px) {
+        margin: 40px auto;
+        max-width: 635px;
+        padding: 0 15px;
+    }
+
+    &__image {
+        width: 64.56px;
+        height: 56.17px;
+
+        position: absolute;
+        top: 12px;
+        right: 141.36px;
+
+        @media (max-width: 570px) {
+            display: none;
+        }
+    }
+
+    &__pre-title {
+        @include pre-title($black);
+        margin-bottom: 21px;
+
+        @media (max-width: 700px) {
+            font-size: clamp(0.688rem, 0.392rem + 1.39vw, 1rem);
+            margin-bottom: clamp(0.438rem, -0.389rem + 3.89vw, 1.313rem);
+        }
+    }
+
+    &__title {
+        @include title(
+            clamp(2.5rem, 0.611rem + 8.89vw, 4.5rem),
+            clamp(3.563rem, 2.205rem + 6.39vw, 5rem),
+            $black
+        );
+
+        margin-bottom: 27px;
+
+        @media (max-width: 700px) {
+            margin-bottom: clamp(1.25rem, 0.837rem + 1.94vw, 1.688rem);
+        }
+    }
+
+    &__text {
+        font-size: clamp(0.875rem, 0.521rem + 1.67vw, 1.25rem);
+    }
+}
+
+.about {
+    &__container {
+        padding-top: 160px;
+        display: flex;
+    }
+
+    &__image-block {
+        &-background {
+            width: 512px;
+            height: 519px;
+        }
+
+        &-dots {
+            width: 154px;
+            height: 134px;
+        }
+
+        &-bread {
+            width: 370px;
+            height: 304px;
+        }
+
+        &-breads {
+            width: 400px;
+            height: 400px;
+        }
+    }
+
+    &__text-block {
+    }
+}
+.text-block {
+    &__pre-title {
+    }
+
+    &__title {
+    }
+
+    &__slider {
+    }
+}
+.about-slider {
+    &__body {
+    }
+
+    &__buttons {
+    }
+
+    &__pre-title {
+    }
+
+    &__title {
+    }
+
+    &__text {
+    }
+
+    &__list {
+    }
+
+    &__item {
+    }
+}
+.about-slider-up {
+}
+.about-slider-down {
+}
