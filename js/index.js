@@ -18,8 +18,7 @@ if (menu && burger) {
     });
 }
 
-
-//! Плавный скролл 
+//! Плавный скролл
 // const anchors = document.querySelectorAll('a[href*="#"]');
 
 // anchors.forEach(anchor => {

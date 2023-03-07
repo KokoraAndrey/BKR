@@ -14,3 +14,17 @@
     font-style: normal;
     font-weight: 400;
 }
+
+%slider-button {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background-color: $primary;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}

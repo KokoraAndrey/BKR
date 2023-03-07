@@ -276,24 +276,49 @@ body {
     }
 
     &__image-block {
+        width: 100%;
+
+        position: relative;
+        top: 0;
+        left: 0;
+
         &-background {
             width: 512px;
             height: 519px;
+
+            position: absolute;
+            top: 128px;
+            left: 21px;
+            z-index: 1;
         }
 
         &-dots {
             width: 154px;
             height: 134px;
+            position: absolute;
+            top: 85px;
+            left: 380px;
+            z-index: 2;
         }
 
         &-bread {
             width: 370px;
             height: 304px;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 3;
         }
 
         &-breads {
             width: 400px;
             height: 400px;
+
+            position: absolute;
+            top: 224px;
+            left: 70px;
+            z-index: 3;
         }
     }
 
@@ -302,9 +327,13 @@ body {
 }
 .text-block {
     &__pre-title {
+        @include pre-title($primary);
+        margin-bottom: 18px;
     }
 
     &__title {
+        @include title(56px, 64px, $primary);
+        margin-bottom: 56px;
     }
 
     &__slider {
@@ -312,27 +341,55 @@ body {
 }
 .about-slider {
     &__body {
+        display: flex;
     }
 
     &__buttons {
+        margin-top: 55px;
+        margin-right: 52px;
+
+        & img {
+            width: 10px;
+            height: 14px;
+        }
+    }
+
+    &__text-content {
+        width: 370px;
     }
 
     &__pre-title {
+        @include pre-title($primary);
+        letter-spacing: 3px;
+        margin-bottom: 12px;
     }
 
     &__title {
+        @include pre-title($primary);
+        font-size: 24px;
+        margin-bottom: 22px;
     }
 
     &__text {
+        color: $text;
+        margin-bottom: 35px;
     }
 
     &__list {
+        color: $primary;
+
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
     }
 
     &__item {
     }
 }
 .about-slider-up {
+    @extend %slider-button;
+    margin-bottom: 8px;
 }
 .about-slider-down {
+    @extend %slider-button;
 }
