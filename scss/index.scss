@@ -271,23 +271,34 @@ body {
 
 .about {
     &__container {
-        padding-top: 160px;
+        padding-top: clamp(3.125rem, 0.429rem + 12.76vw, 10rem);
         display: flex;
+        gap: 22px;
+        padding-bottom: 234px;
+
+        @media (max-width: 997px) {
+            flex-direction: column-reverse;
+        }
     }
 
     &__image-block {
         width: 100%;
+        max-width: 580px;
 
         position: relative;
         top: 0;
         left: 0;
 
+        @media (max-width: 997px) {
+            margin: 0 auto;
+        }
+
         &-background {
-            width: 512px;
-            height: 519px;
+            width: clamp(21.063rem, 16.774rem + 20.3vw, 32rem);
+            height: clamp(21.875rem, 17.733rem + 19.61vw, 32.438rem);
 
             position: absolute;
-            top: 128px;
+            top: clamp(5.625rem, -6.25rem + 19vw, 8rem);
             left: 21px;
             z-index: 1;
         }
@@ -299,11 +310,15 @@ body {
             top: 85px;
             left: 380px;
             z-index: 2;
+
+            @media (max-width: 1000px) {
+                display: none;
+            }
         }
 
         &-bread {
-            width: 370px;
-            height: 304px;
+            width: clamp(13.188rem, 9.291rem + 18.45vw, 23.125rem);
+            height: clamp(13.125rem, 10.821rem + 10.9vw, 19rem);
 
             position: absolute;
             top: 0;
@@ -312,17 +327,23 @@ body {
         }
 
         &-breads {
-            width: 400px;
-            height: 400px;
+            width: clamp(15rem, 11.079rem + 18.56vw, 25rem);
+            height: clamp(15rem, 11.079rem + 18.56vw, 25rem);
 
             position: absolute;
-            top: 224px;
+            top: clamp(9.75rem, 8.084rem + 7.89vw, 14rem);
             left: 70px;
             z-index: 3;
         }
     }
 
     &__text-block {
+        max-width: 570px;
+        margin-top: -6px;
+
+        @media (max-width: 997px) {
+            margin: 0 auto;
+        }
     }
 }
 .text-block {
@@ -355,7 +376,7 @@ body {
     }
 
     &__text-content {
-        width: 370px;
+        max-width: 400px;
     }
 
     &__pre-title {
@@ -392,4 +413,97 @@ body {
 }
 .about-slider-down {
     @extend %slider-button;
+}
+
+.features {
+    &__container {
+    }
+
+    &__body {
+    }
+
+    &__text-block {
+    }
+
+    &__text {
+        @include pre-title($primary);
+        text-align: center;
+        margin-bottom: 18px;
+        letter-spacing: 3px;
+    }
+
+    &__title {
+        @include title(56px, 64px, $primary);
+        text-align: center;
+        margin-bottom: 69px;
+    }
+
+    &__card {
+        display: flex;
+        width: 1170px;
+        height: 416px;
+    }
+}
+.card {
+    margin-bottom: 176px;
+    &__fresh {
+        width: 400px;
+        height: 384px;
+        padding: 56px 30px 48px 64px;
+    }
+
+    &__icon {
+        &-coffee {
+            width: 102px;
+            height: 87px;
+            margin-bottom: 48px;
+        }
+
+        &-cake {
+            width: 91px;
+            height: 96px;
+            margin-bottom: 43px;
+        }
+
+        &-batter {
+            width: 102px;
+            height: 86px;
+            margin-bottom: 32px;
+        }
+    }
+
+    &__title {
+        @include title(40px, 48px, $primary);
+        margin-bottom: 18px;
+    }
+
+    &__text {
+        color: $text;
+    }
+
+    &__natural {
+        width: 370px;
+        height: 384px;
+        padding: 51px 32px 48px;
+    }
+
+    &__tasty {
+        width: 400px;
+        height: 416px;
+
+        position: relative;
+        top: 0;
+        right: 0;
+
+        padding: 72px 32px 64px 62px;
+        background-color: $secondary;
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 179px;
+        height: 186px;
+    }
 }

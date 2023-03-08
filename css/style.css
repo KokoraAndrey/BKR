@@ -47,7 +47,7 @@ a {
   padding: 0 15px;
 }
 
-.about-slider__title, .about-slider__pre-title, .text-block__pre-title, .text-content__pre-title {
+.features__text, .about-slider__title, .about-slider__pre-title, .text-block__pre-title, .text-content__pre-title {
   font-family: "Oswald";
   font-style: normal;
   font-weight: 400;
@@ -57,7 +57,7 @@ a {
   text-transform: uppercase;
 }
 
-.text-block__title, .text-content__title {
+.card__title, .features__title, .text-block__title, .text-content__title {
   font-family: "Ultra";
   font-style: normal;
   font-weight: 400;
@@ -75,7 +75,7 @@ a {
   cursor: pointer;
 }
 
-.about-slider__title, .about-slider__pre-title, .text-block__pre-title, .text-content__pre-title {
+.features__text, .about-slider__title, .about-slider__pre-title, .text-block__pre-title, .text-content__pre-title {
   font-family: "Oswald";
   font-style: normal;
   font-weight: 400;
@@ -85,7 +85,7 @@ a {
   text-transform: uppercase;
 }
 
-.text-block__title, .text-content__title {
+.card__title, .features__title, .text-block__title, .text-content__title {
   font-family: "Ultra";
   font-style: normal;
   font-weight: 400;
@@ -318,20 +318,33 @@ body.lock {
 }
 
 .about__container {
-  padding-top: 160px;
+  padding-top: clamp(3.125rem, 0.429rem + 12.76vw, 10rem);
   display: flex;
+  gap: 22px;
+  padding-bottom: 234px;
+}
+@media (max-width: 997px) {
+  .about__container {
+    flex-direction: column-reverse;
+  }
 }
 .about__image-block {
   width: 100%;
+  max-width: 580px;
   position: relative;
   top: 0;
   left: 0;
 }
+@media (max-width: 997px) {
+  .about__image-block {
+    margin: 0 auto;
+  }
+}
 .about__image-block-background {
-  width: 512px;
-  height: 519px;
+  width: clamp(21.063rem, 16.774rem + 20.3vw, 32rem);
+  height: clamp(21.875rem, 17.733rem + 19.61vw, 32.438rem);
   position: absolute;
-  top: 128px;
+  top: clamp(5.625rem, -6.25rem + 19vw, 8rem);
   left: 21px;
   z-index: 1;
 }
@@ -343,22 +356,37 @@ body.lock {
   left: 380px;
   z-index: 2;
 }
+@media (max-width: 1000px) {
+  .about__image-block-dots {
+    display: none;
+  }
+}
 .about__image-block-bread {
-  width: 370px;
-  height: 304px;
+  width: clamp(13.188rem, 9.291rem + 18.45vw, 23.125rem);
+  height: clamp(13.125rem, 10.821rem + 10.9vw, 19rem);
   position: absolute;
   top: 0;
   left: 0;
   z-index: 3;
 }
 .about__image-block-breads {
-  width: 400px;
-  height: 400px;
+  width: clamp(15rem, 11.079rem + 18.56vw, 25rem);
+  height: clamp(15rem, 11.079rem + 18.56vw, 25rem);
   position: absolute;
-  top: 224px;
+  top: clamp(9.75rem, 8.084rem + 7.89vw, 14rem);
   left: 70px;
   z-index: 3;
 }
+.about__text-block {
+  max-width: 570px;
+  margin-top: -6px;
+}
+@media (max-width: 997px) {
+  .about__text-block {
+    margin: 0 auto;
+  }
+}
+
 .text-block__pre-title {
   color: #171b1b;
   margin-bottom: 18px;
@@ -381,7 +409,7 @@ body.lock {
   height: 14px;
 }
 .about-slider__text-content {
-  width: 370px;
+  max-width: 400px;
 }
 .about-slider__pre-title {
   color: #171b1b;
@@ -405,6 +433,79 @@ body.lock {
 }
 .about-slider-up {
   margin-bottom: 8px;
+}
+
+.features__text {
+  color: #171b1b;
+  text-align: center;
+  margin-bottom: 18px;
+  letter-spacing: 3px;
+}
+.features__title {
+  font-size: 56px;
+  line-height: 64px;
+  color: #171b1b;
+  text-align: center;
+  margin-bottom: 69px;
+}
+.features__card {
+  display: flex;
+  width: 1170px;
+  height: 416px;
+}
+
+.card {
+  margin-bottom: 176px;
+}
+.card__fresh {
+  width: 400px;
+  height: 384px;
+  padding: 56px 30px 48px 64px;
+}
+.card__icon-coffee {
+  width: 102px;
+  height: 87px;
+  margin-bottom: 48px;
+}
+.card__icon-cake {
+  width: 91px;
+  height: 96px;
+  margin-bottom: 43px;
+}
+.card__icon-batter {
+  width: 102px;
+  height: 86px;
+  margin-bottom: 32px;
+}
+.card__title {
+  font-size: 40px;
+  line-height: 48px;
+  color: #171b1b;
+  margin-bottom: 18px;
+}
+.card__text {
+  color: rgba(51, 51, 51, 0.496405);
+}
+.card__natural {
+  width: 370px;
+  height: 384px;
+  padding: 51px 32px 48px;
+}
+.card__tasty {
+  width: 400px;
+  height: 416px;
+  position: relative;
+  top: 0;
+  right: 0;
+  padding: 72px 32px 64px 62px;
+  background-color: #fbb65f;
+}
+.card__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 179px;
+  height: 186px;
 }
 
 /*# sourceMappingURL=style.css.map */
